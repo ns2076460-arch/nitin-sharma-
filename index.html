@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nitin Sharma — BBA Business Analytics | Resume</title>
+  <style>
+    /* ==========================================================================
+       CSS Variables & Base Reset
+       ========================================================================== */
+    :root {
+      --bg-page: #ffffff;
+      --bg-subtle: #f8fafc;
+      --bg-accent-tint: #eff6ff;
+      --navy-primary: #0f294a;
+      --navy-secondary: #1e3a8a;
+      --blue-accent: #2563eb;
+      --blue-border: #dbeafe;
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --border-light: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(15, 41, 74, 0.06);
+      --shadow-md: 0 4px 14px rgba(15, 41, 74, 0.08);
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --max-width: 980px;
+      --nav-height: 64px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--navy-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--blue-accent);
+    }
+
+    /* ==========================================================================
+       Sticky Top Navigation
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      height: var(--nav-height);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand span {
+      color: var(--blue-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.35rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--navy-primary);
+      border-bottom-color: var(--blue-accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: var(--navy-primary);
+      color: #ffffff;
+      border: 1px solid var(--navy-primary);
+      padding: 0.5rem 0.95rem;
+      border-radius: 7px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--navy-secondary);
+    }
+
+    .btn-print:active {
+      transform: translateY(1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 0.4rem 0.6rem;
+      color: var(--navy-primary);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       Main Container & Section Layout
+       ========================================================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+      scroll-margin-top: var(--nav-height);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      letter-spacing: -0.02em;
+    }
+
+    /* ==========================================================================
+       Hero / Home Section
+       ========================================================================== */
+    .hero {
+      padding: 4rem 0 3.5rem;
+      background: linear-gradient(180deg, var(--bg-subtle) 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--bg-accent-tint);
+      color: var(--navy-secondary);
+      border: 1px solid var(--blue-border);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-name {
+      font-size: 2.65rem;
+      font-weight: 800;
+      color: var(--navy-primary);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-role {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--blue-accent);
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-intro {
+      color: var(--text-dark);
+      font-size: 1.02rem;
+      max-width: 660px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: var(--navy-primary);
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.93rem;
+      border: 1px solid var(--navy-primary);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--navy-secondary);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: #ffffff;
+      color: var(--navy-primary);
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.93rem;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy-primary);
+      background-color: var(--bg-subtle);
+    }
+
+    /* Profile Photo Frame with graceful fallback if /photo.jpg is missing */
+    .photo-wrapper {
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--navy-primary), var(--blue-accent));
+      box-shadow: var(--shadow-md);
+      flex-shrink: 0;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: var(--bg-accent-tint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      background-color: var(--bg-accent-tint);
+      letter-spacing: 0.04em;
+    }
+
+    /* ==========================================================================
+       About & Career Objective Section
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-subtle {
+      background-color: var(--bg-subtle);
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.65rem;
+    }
+
+    .card p {
+      color: var(--text-dark);
+      font-size: 0.98rem;
+    }
+
+    /* ==========================================================================
+       Education Section
+       ========================================================================== */
+    .edu-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.25rem;
+      border-left: 4px solid var(--navy-primary);
+    }
+
+    .edu-degree {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-institution {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .edu-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background-color: var(--bg-subtle);
+      color: var(--navy-primary);
+      border: 1px solid var(--border-light);
+    }
+
+    .badge-pill.highlight {
+      background-color: var(--bg-accent-tint);
+      color: var(--navy-secondary);
+      border-color: var(--blue-border);
+    }
+
+    /* ==========================================================================
+       Skills Section
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill-tag {
+      background-color: var(--bg-accent-tint);
+      color: var(--navy-primary);
+      border: 1px solid var(--blue-border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .skill-tag.neutral {
+      background-color: var(--bg-subtle);
+      color: var(--text-dark);
+      border-color: var(--border-light);
+    }
+
+    /* ==========================================================================
+       Contact Section
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 1.35rem;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+    }
+
+    .contact-value {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--navy-primary);
+      word-break: break-word;
+    }
+
+    /* ==========================================================================
+       Footer
+       ========================================================================== */
+    footer {
+      background-color: var(--bg-subtle);
+      border-top: 1px solid var(--border-light);
+      padding: 1.75rem 0;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       Responsive Media Queries (Tablet & Mobile)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2.75rem 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.75rem;
+      }
+
+      .photo-wrapper {
+        order: -1;
+        margin: 0 auto;
+        width: 148px;
+        height: 148px;
+      }
+
+      .hero-name {
+        font-size: 2.15rem;
+      }
+
+      .hero-meta,
+      .hero-cta-group {
+        justify-content: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* ==========================================================================
+       Print / Save as PDF Stylesheet
+       ========================================================================== */
+    @media print {
+      @page {
+        margin: 12mm 14mm;
+        size: A4;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
+
+      .navbar,
+      .hero-cta-group,
+      footer {
+        display: none !important;
+      }
+
+      .hero {
+        padding: 0 0 1rem 0 !important;
+        background: none !important;
+        border-bottom: 1.5pt solid #0f294a;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr auto !important;
+        text-align: left !important;
+        gap: 1.25rem !important;
+      }
+
+      .photo-wrapper {
+        width: 96px !important;
+        height: 96px !important;
+        box-shadow: none !important;
+        padding: 2px !important;
+      }
+
+      .hero-name {
+        font-size: 20pt !important;
+        margin-bottom: 2pt !important;
+      }
+
+      .hero-role {
+        font-size: 12pt !important;
+        margin-bottom: 6pt !important;
+      }
+
+      .hero-meta {
+        justify-content: flex-start !important;
+        margin-bottom: 0 !important;
+        font-size: 9.5pt !important;
+      }
+
+      section {
+        padding: 1rem 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .section-header {
+        margin-bottom: 0.65rem !important;
+      }
+
+      .section-title {
+        font-size: 13pt !important;
+      }
+
+      .card,
+      .contact-item {
+        box-shadow: none !important;
+        padding: 0.85rem 1rem !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.75rem !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #0f294a !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Navigation Bar (Only populated sections are linked)
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">Nitin <span>Sharma</span></a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-print" id="printBtn" title="Print or Save Resume as PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / Save PDF</span>
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         Home / Hero Section
+         ====================================================================== -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">Open to Internship Opportunities</div>
+          <h1 class="hero-name">Nitin Sharma</h1>
+          <p class="hero-role">BBA Business Analytics</p>
+
+          <div class="hero-meta">
+            <span class="hero-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Bahadurgarh, Haryana
+            </span>
+            <span class="hero-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:sharmanitin17@outlook.com">sharmanitin17@outlook.com</a>
+            </span>
+            <span class="hero-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+919306695816">9306695816</a>
+            </span>
+          </div>
+
+          <p class="hero-intro">
+            Business Analytics BBA student with strong communication and clear writing skills. Eager to craft engaging content, simplify complex ideas, and support teams in an Internshala content writing internship while building hands-on experience.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-primary">Get in Touch</a>
+            <button type="button" class="btn-secondary" id="heroPrintBtn">Download / Print Resume</button>
+          </div>
+        </div>
+
+        <div class="photo-wrapper">
+          <div class="photo-inner">
+            <img src="./photo.jpg" alt="Nitin Sharma" id="profilePhoto" />
+            <div class="photo-fallback" id="photoFallback" aria-hidden="true">NS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         About & Career Objective Section
+         ====================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Profile</span>
+          <h2 class="section-title">About &amp; Career Objective</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="card card-subtle">
+            <h3 class="card-title">About Me</h3>
+            <p>
+              Business Analytics BBA student with strong communication and clear writing skills. Eager to craft engaging content, simplify complex ideas, and support teams in an Internshala content writing internship while building hands-on experience.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Career Objective</h3>
+            <p>
+              I am a Business Administration undergraduate specializing in Business Analytics at Galgotias University, seeking an internship through Internshala to apply structured analysis, problem-solving, and commercial awareness in a fast-paced team. Through coursework and academic projects, I have built practical skills in SQL querying, data cleaning, spreadsheet modeling in MS Excel, and interactive dashboard creation in Power BI. Alongside academic training, my summer internship handling invoice reconciliations, expense tracking, and inventory audits—together with building and running my own digital home decor brand—has given me hands-on exposure to real-world operations and decision-making. I enjoy turning raw, fragmented data into clear reporting frameworks and practical insights that support stakeholders and improve day-to-day workflows. Detail-oriented and adaptable, I collaborate well across teams to meet tight deadlines while translating technical findings into straightforward business takeaways. My goal is to add reliable value from day one by organizing data, tracking performance metrics, and supporting operational or analytical initiatives while learning from experienced mentors and building a strong foundation for a career in analytics and business operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Education Section
+         ====================================================================== -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="card edu-card">
+          <div>
+            <h3 class="edu-degree">BBA Business Analytics</h3>
+            <p class="edu-institution">Galgotias University</p>
+          </div>
+          <div class="edu-badges">
+            <span class="badge-pill">2024 – 2027</span>
+            <span class="badge-pill highlight">CGPA: 7.89</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Skills & Languages Section
+         ====================================================================== -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Core Competencies</span>
+          <h2 class="section-title">Skills &amp; Languages</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card">
+            <h3 class="skill-group-title">Technical Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">MS Excel</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="skill-group-title">Management &amp; Soft Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Communication</span>
+            </div>
+          </div>
+
+          <div class="card" style="grid-column: 1 / -1;">
+            <h3 class="skill-group-title">Languages Known</h3>
+            <div class="skill-tags">
+              <span class="skill-tag neutral">Hindi</span>
+              <span class="skill-tag neutral">English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Contact Section
+         ====================================================================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Reach Out</span>
+          <h2 class="section-title">Contact Details</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="contact-label">Email Address</span>
+            <a href="mailto:sharmanitin17@outlook.com" class="contact-value">sharmanitin17@outlook.com</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Phone Number</span>
+            <a href="tel:+919306695816" class="contact-value">+91 9306695816</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Bahadurgarh, Haryana</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Nitin Sharma. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Vanilla JavaScript (Navigation, Active Scroll Spy, Image Fallback & Print)
+       ======================================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Dynamic footer year
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // 2. Print / Save as PDF triggers
+      function triggerPrint() {
+        window.print();
+      }
+      const printBtn = document.getElementById("printBtn");
+      const heroPrintBtn = document.getElementById("heroPrintBtn");
+      if (printBtn) printBtn.addEventListener("click", triggerPrint);
+      if (heroPrintBtn) heroPrintBtn.addEventListener("click", triggerPrint);
+
+      // 3. Mobile navigation toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = navLinks.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // 4. Active navigation link highlighting on scroll
+      const sections = document.querySelectorAll("main section[id]");
+      const navItems = document.querySelectorAll(".nav-link");
+
+      function updateActiveNav() {
+        let currentId = "";
+        const scrollPosition = window.scrollY + 110;
+
+        sections.forEach(function (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentId = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach(function (item) {
+          item.classList.remove("active");
+          if (currentId && item.getAttribute("href") === "#" + currentId) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      updateActiveNav();
+
+      // 5. Graceful fallback to initials if /photo.jpg is not yet placed on server
+      const profilePhoto = document.getElementById("profilePhoto");
+      const photoFallback = document.getElementById("photoFallback");
+      if (profilePhoto && photoFallback) {
+        profilePhoto.addEventListener("error", function () {
+          profilePhoto.style.display = "none";
+          photoFallback.style.display = "flex";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
